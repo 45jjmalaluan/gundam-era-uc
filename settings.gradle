@@ -1,0 +1,3 @@
+rootProject.name = 'gundam-era-uc'
+
+include 'uc-core', 'uc-web'

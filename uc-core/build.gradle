@@ -1,0 +1,8 @@
+project.description = 'U.C. core'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}

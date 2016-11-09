@@ -1,0 +1,19 @@
+<configuration>    
+    <appender name="FILE_ROOT"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/gundam-era-uc/gundam-era-uc.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>logs/gundam-era-uc/gundam-era-uc.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- keep 7 days' worth of history -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%level] %d{HH:mm:ss.SSS} %logger %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <root level="DEBUG">
+        <appender-ref ref="FILE_ROOT" />
+    </root>
+</configuration>

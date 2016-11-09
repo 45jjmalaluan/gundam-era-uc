@@ -1,0 +1,32 @@
+apply plugin: 'war'
+apply plugin: 'spring-boot'
+
+project.description = 'U.C. web'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile project(':uc-core')
+	compile("org.springframework.boot:spring-boot-starter-web:1.4.1.RELEASE")
+	// rest
+	compile("org.springframework.boot:spring-boot-starter-hateoas:1.4.1.RELEASE")
+	// security
+        compile("org.springframework.security.oauth:spring-security-oauth2:2.0.11.RELEASE")
+	// server
+	providedCompile("org.springframework.boot:spring-boot-starter-tomcat:1.4.1.RELEASE")
+}
+
+war {
+	archiveName 'gundam-era-uc.war'
+}
+
+buildscript {
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
+	}
+	repositories {
+		mavenCentral()
+	}
+}
